@@ -28,14 +28,26 @@ ini_set('display_errors','on');
     }
     class Soldado extends Unidad{
         protected $danyo = 20;
+        protected $armadura;
+        
+        function __construct($name,Armadura $armadura = null) {
+            $this->armadura = $armadura;
+            parent::__construct($name);
+        }
+
         public function ataque(Unidad $oponente) {
             echo "<p>$this->nombre parte en dos a ".$oponente->getNombre()."</p>";
             $oponente->tomaAtaque($this->danyo);
         }
         public function tomaAtaque($danyo) {
-            parent::tomaAtaque($danyo/2);
+            if ($this->armadura){
+                $danyo = $this->armadura->absorve_danyo($danyo);
+            }
+            parent::tomaAtaque($danyo);
         }
-
+        function setArmadura($armadura) {
+            $this->armadura = $armadura;
+        }
     }
     class Arquero extends Unidad{
         protected $danyo = 20;
@@ -49,8 +61,21 @@ ini_set('display_errors','on');
          }
 
     }
+    interface Armadura{
+        public function absorve_danyo($danyo);
+    }
+    class ArmaduradeBronze implements Armadura{
+        public function absorve_danyo($danyo){
+            return $danyo / 2;
+        }
+    }
+    class ArmaduradePlata implements Armadura{
+        public function absorve_danyo($danyo){
+            return $danyo / 3;
+        }
+    }
     $u2 = new Arquero('Sam');
-    $u1 = new Soldado('Rambo');
+    $u1 = new Soldado('Rambo',new ArmaduradeBronze());
     
     do {
     $u2->ataque($u1);
