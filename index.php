@@ -1,5 +1,7 @@
 <?php
 require 'conexioBD.inc.php';
+define('ns','JuegoRol\\');
+
 ?>
 <html><head></head>
     <body>
@@ -10,7 +12,7 @@ require 'conexioBD.inc.php';
                 try {
                     $classes = $conn->query("SELECT * FROM Unidades");
                     foreach ($classes as $clase) {
-                        echo '<option value="JuegoRol\\'. trim($clase['nom']) .'">' . $clase['nom'] . '</option>';
+                        echo '<option value="'.constant('ns').$clase['nom'].'">'.$clase['nom'].'</option>';
                     }
                 } catch (PDOException $ex) {
                     echo "Fallo en la base de datos: " . $e->getMessage();
@@ -22,7 +24,7 @@ require 'conexioBD.inc.php';
                 try {
                     $classes = $conn->query("SELECT * FROM Armaduras");
                     foreach ($classes as $clase) {
-                        echo '<option value="JuegoRol\\'. $clase['nom'] .'">' . $clase['nom'] . '</option>';
+                        echo '<option value="'.constant('ns').$clase['nom'] .'">' . $clase['nom'] . '</option>';
                     }
                 } catch (PDOException $ex) {
                     echo "Fallo en la base de datos: " . $e->getMessage();
@@ -34,7 +36,7 @@ require 'conexioBD.inc.php';
                 try {
                     $classes = $conn->query("SELECT * FROM Armas");
                     foreach ($classes as $clase) {
-                        echo '<option value="JuegoRol\\'. $clase['nom'] .'">' . $clase['nom'] . '</option>';
+                        echo '<option value="'.constant('ns').$clase['nom'] .'">' . $clase['nom'] . '</option>';
                     }
                 } catch (PDOException $ex) {
                     echo "Fallo en la base de datos: " . $e->getMessage();
@@ -48,7 +50,7 @@ require 'conexioBD.inc.php';
                 try {
                     $classes = $conn->query("SELECT * FROM Unidades");
                     foreach ($classes as $clase) {
-                        echo '<option value="JuegoRol\\'.trim($clase['nom']).'">' . $clase['nom'] . '</option>';
+                        echo '<option value="'.constant('ns').$clase['nom'].'">' . $clase['nom'] . '</option>';
                     }
                 } catch (PDOException $ex) {
                     echo "Fallo en la base de datos: " . $e->getMessage();
@@ -60,7 +62,7 @@ require 'conexioBD.inc.php';
                 try {
                     $classes = $conn->query("SELECT * FROM Armaduras");
                     foreach ($classes as $clase) {
-                        echo '<option value="JuegoRol\\'. $clase['nom'] .'">' . $clase['nom'] . '</option>';
+                        echo '<option value="'.constant('ns').$clase['nom'] .'">' . $clase['nom'] . '</option>';
                     }
                 } catch (PDOException $ex) {
                     echo "Fallo en la base de datos: " . $e->getMessage();
@@ -72,7 +74,7 @@ require 'conexioBD.inc.php';
                 try {
                     $classes = $conn->query("SELECT * FROM Armas");
                     foreach ($classes as $clase) {
-                        echo '<option value="JuegoRol\\'. $clase['nom'] .'">' . $clase['nom'] . '</option>';
+                        echo '<option value="'.constant('ns').$clase['nom'] .'">' . $clase['nom'] . '</option>';
                     }
                 } catch (PDOException $ex) {
                     echo "Fallo en la base de datos: " . $e->getMessage();
