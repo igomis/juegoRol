@@ -1,0 +1,18 @@
+{
+    "name": "ignasi/juego-rol",
+    "description": "Juego Rol",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "ignasi gomis",
+            "email": "igomis@cipfpbatoi.es"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4":{
+            "JuegoRol\\": "src/"
+        }
+    }
+}
