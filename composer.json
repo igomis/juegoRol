@@ -9,7 +9,7 @@
             "email": "igomis@cipfpbatoi.es"
         }
     ],
-    "require": {},
+    "require": { "filp/whoops": "^2.3" },
     "autoload": {
         "psr-4":{
             "JuegoRol\\": "src/"

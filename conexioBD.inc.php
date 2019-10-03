@@ -1,7 +1,7 @@
 <?php
 
 try {
-    $conn = new PDO('mysql:host=localhost;dbname=juegoRol', 'root', '1234');
+    $conn = new PDO('mysql:host=localhost;dbname=juegoRol', 'homestead', 'secret');
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $conn->query("SET NAMES 'utf8'");
 }

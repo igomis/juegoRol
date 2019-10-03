@@ -1,5 +1,9 @@
 <?php
-require 'conexioBD.inc.php';
+require './../conexioBD.inc.php';
+require dirname(__FILE__) . "/../vendor/autoload.php";
+$whoops = new \Whoops\Run;
+$whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler);
+$whoops->register();
 ?>
 <html><head></head>
     <body>

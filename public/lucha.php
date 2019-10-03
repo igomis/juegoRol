@@ -1,7 +1,9 @@
 <?php
 namespace JuegoRol;
-ini_set('display_errors', 'on');
-require 'vendor/autoload.php';
+require dirname(__FILE__) . "/../vendor/autoload.php";
+$whoops = new \Whoops\Run;
+$whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler);
+$whoops->register();
 
 if (isset($_REQUEST['boton'])) {
             $u1 = new $_REQUEST['unidad1']($_REQUEST['nom1'],new $_REQUEST['armadura1'](), new $_REQUEST['arma1']());

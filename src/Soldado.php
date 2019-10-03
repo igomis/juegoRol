@@ -17,5 +17,8 @@ class Soldado extends Unidad {
         echo "<p>$this->nombre parte en dos a " . $oponente->getNombre() . "</p>";
         $oponente->tomaAtaque($this->arma->produce_danyo($this->danyo));
     }
+//    public function mueve($direction) {
+//        echo "<p>$this->nombre retrocede hacia $direction</p>";
+//    }
 
 }
